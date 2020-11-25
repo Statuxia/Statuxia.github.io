@@ -1,7 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
 
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -15,7 +14,7 @@
 
     <!-- CSS here -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css"> <!--карусель иконок.-->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/themify-icons.css">
@@ -49,9 +48,9 @@
                             </div>
                             <div class="col-xl-6 col-lg-7">
                                 <div class="main-menu  d-none d-lg-block">
-                                    <nav>
+                                    <nav id="menu">
                                         <ul id="navigation">
-                                            <li><a class="active" href="#">Home</a></li>
+                                        	<li><a class="active" href="#">Home</a></li>
                                             <li><a href="#about">About</a></li>
                                             <li><a href="#stats">Stats</a></li>
                                             <li><a href="#projects">Projects...</a>
@@ -67,7 +66,7 @@
                             </div>
                             <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                                 <div class="say_hello">
-                                    <a href="#"><i class="fa fa-home"></i></a>
+                                    <a id="menu" href="#"><i class="fa fa-home"></i></a>
 
                                 </div>
                             </div>
@@ -81,10 +80,11 @@
             </div>
         </div>
     </header>
+<a id="#home"></a>
     <!-- header-end -->
 
     <!-- bradcam_area  -->
-    <div class="bradcam_area bradcam_bg_2">
+    <div class="bradcam_area">
         <div class="container" bgcolor="#A0BEC4">
             <div class="row">
                 <div class="col-xl-12">
@@ -98,7 +98,7 @@
         </div>
     </div>
     <!--/ bradcam_area  -->
-<a name="about"></a>
+<a id="about"></a>
     <!-- about_area_start -->
     <div class="about_area">
         <div class="container">
@@ -124,7 +124,7 @@
         </div>
     </div>
     <!-- about_area_end -->
-<a name="stats"></a>
+<a id="stats"></a>
     <!-- Start Align Area -->
 		<div class="container">
 			<div class="section-top-border">
@@ -142,7 +142,7 @@
 	            </div>
 					<div class="progress-table">
 						<div class="table-head">
-							<div class="languages">Languages</div>
+							<div class="languages" >Languages</div>
 							<div class="percentage">Percentages</div>
 							<div class="graph">Graph</div>
 						</div>
@@ -203,7 +203,7 @@
 	</div>
 	<!-- End Align Area -->
 
-<a name="projects"></a>
+<a id="projects"></a>
     <!-- about_area_start -->
     <div class="about_area">
         <div class="container">
@@ -228,7 +228,7 @@
         </div>
     </div>
     <!-- about_area_end -->
-<a name="shop"></a>
+<a id="shop"></a>
 <!-- Delicious area start  -->
     <div class="Delicious_area">
         <div class="container">
@@ -339,7 +339,7 @@
                     </div>
                     <div class="col-xl-4 col-md-6 col-lg-5 offset-xl-1">
                         <div class="footer_widget">
-                            <h3 name="contacts" class="footer_title" align="center">
+                            <h3 id="contacts" class="footer_title" align="center">
                                 Contacts
                             </h3>
                             <ul>
@@ -386,7 +386,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
-                        	<a name="contacts"></a>
+                        	<a id="contacts"></a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> and edited by FQGM
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -399,6 +399,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- footer_end  -->
 
     <!-- JS here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -417,8 +418,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/jquery.slicknav.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/plugins.js"></script>
-
-
+    
 
     <!--contact js-->
     <script src="js/contact.js"></script>
@@ -429,7 +429,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
     <script src="js/main.js"></script>
-
     <script>
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',
@@ -445,6 +444,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
         });
     </script>
+	<script>
+		$(document).ready(function(){
+			$("#menu").on("click","a", function (event) {
+				if href != "aeroku.html" or href != "#"
+					event.preventDefault();
+					var id = $(this).attr('href'),
+					top = $(id).offset().top;
+			$('body,html').animate({scrollTop: top}, 600);
+			});
+		});
+	</script>
 </body>
 
 </html>
