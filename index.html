@@ -434,16 +434,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     $("#menu").on("click","a", function (event) {
     	var attr = $(this).attr('id');
     	if (typeof attr !== typeof undefined && attr !== false) {
-    	//забираем идентификатор бока с атрибута href
         var id  = $(this).attr('href'),
-        //узнаем высоту от начала страницы до блока на который ссылается якорь
             top = $(id).offset().top;
-        //анимируем переход на расстояние - top за 1500 мс
         event.preventDefault();
         $('body,html').animate({scrollTop: top}, 647);
     	};
 	    });
 	});
+	//big respect to Andreas Furster and stranger for exception: https://stackoverflow.com/questions/1318076/jquery-hasattr-checking-to-see-if-there-is-an-attribute-on-an-element/1318091#1318091?newreg=70d089febb734fe79dd173eb03da2eb8
+	//and big respect to Dmitry Britan for smoothness: https://webcomplex.com.ua/jquery/plavnyj-skroll-posle-nazhatiya-na-yakornuyu-ssylku.html 
 	</script>
 </body>
 
