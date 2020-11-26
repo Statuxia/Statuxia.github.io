@@ -28,7 +28,7 @@
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
-<body>
+<body style="opacity:0;transition:.5s;">
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -236,7 +236,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
     <script src="js/main.js"></script>
-
+    <script>
+      $(document).ready(function() {    
+        $("body").css("opacity", "1");
+      });
+    </script>
     <script>
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',
