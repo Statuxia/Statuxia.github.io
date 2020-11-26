@@ -48,18 +48,18 @@
                             </div>
                             <div class="col-xl-6 col-lg-7">
                                 <div class="main-menu  d-none d-lg-block">
-                                    <nav>
+                                    <nav id="menu">
                                         <ul id="navigation">
-                                        	<li><a class="active" href="#">Home</a></li>
-                                            <li><a href="#about">About</a></li>
-                                            <li><a href="#stats">Stats</a></li>
-                                            <li><a href="#projects">Projects...</a>
+                                        	<li><a class="active" href="#" id="yes">Home</a></li>
+                                            <li><a href="#about" id="yes">About</a></li>
+                                            <li><a href="#stats" id="yes">Stats</a></li>
+                                            <li><a href="#projects" id="yes">Projects...</a>
                                                 <ul class="submenu">
                                                     <li><a href="aeroku.html">Aeroku</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="#shop">Shop</a></li>
-                                            <li><a href="#contacts">Contacts</a></li>
+                                            <li><a href="#shop" id="yes">Shop</a></li>
+                                            <li><a href="#contacts" id="yes">Contacts</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -430,20 +430,21 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <script src="js/main.js"></script>
     <script>
-        $('#datepicker').datepicker({
-            iconsLibrary: 'fontawesome',
-            icons: {
-                rightIcon: '<span class="fa fa-calendar-o"></span>'
-            }
-        });
-        $('#datepicker2').datepicker({
-            iconsLibrary: 'fontawesome',
-            icons: {
-                rightIcon: '<span class="fa fa-calendar-o"></span>'
-            }
-
-        });
-    </script>
+    $(document).ready(function(){
+    $("#menu").on("click","a", function (event) {
+    	var attr = $(this).attr('id');
+    	if (typeof attr !== typeof undefined && attr !== false) {
+    	//забираем идентификатор бока с атрибута href
+        var id  = $(this).attr('href'),
+        //узнаем высоту от начала страницы до блока на который ссылается якорь
+            top = $(id).offset().top;
+        //анимируем переход на расстояние - top за 1500 мс
+        event.preventDefault();
+        $('body,html').animate({scrollTop: top}, 647);
+    	};
+	    });
+	});
+	</script>
 </body>
 
 </html>
